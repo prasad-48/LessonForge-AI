@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+.venv-1/
+*.db
+.streamlit/
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+
+# Local test output
+pytest_output.txt
+pytest_summary.txt
+
+# Local editor settings
+.vscode/

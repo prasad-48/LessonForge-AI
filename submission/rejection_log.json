@@ -1,0 +1,67 @@
+{
+  "topic": "Introduction to RAG",
+  "status": "rejected",
+  "attempt_count": 3,
+  "retry_count": 2,
+  "failure_reasons": [
+    "The lesson did not meet the required rubric after the maximum retry limit."
+  ],
+  "evaluation": {
+    "overall_pass": false,
+    "criteria": [
+      {
+        "name": "Accuracy and groundedness",
+        "passed": false,
+        "reason": "The lesson needs clearer factual grounding.",
+        "improvement_suggestion": "Add concise definitions and supported examples.",
+        "evidence": ""
+      },
+      {
+        "name": "Beginner-friendly language",
+        "passed": false,
+        "reason": "Some terminology could be simplified.",
+        "improvement_suggestion": "Replace jargon with plain-language explanations.",
+        "evidence": ""
+      },
+      {
+        "name": "Practical examples",
+        "passed": false,
+        "reason": "The examples were too brief.",
+        "improvement_suggestion": "Add a concrete RAG workflow example.",
+        "evidence": ""
+      },
+      {
+        "name": "No unexplained jargon",
+        "passed": false,
+        "reason": "The lesson introduced terms without context.",
+        "improvement_suggestion": "Define all key terms clearly in plain English.",
+        "evidence": ""
+      },
+      {
+        "name": "Coverage of key concepts",
+        "passed": false,
+        "reason": "The core stages of RAG were not fully covered.",
+        "improvement_suggestion": "Explain retrieval, generation, and their interaction.",
+        "evidence": ""
+      },
+      {
+        "name": "Logical teaching flow",
+        "passed": false,
+        "reason": "The lesson did not build the concept in a clear order.",
+        "improvement_suggestion": "Use a sequential structure from definition to workflow to benefits.",
+        "evidence": ""
+      }
+    ],
+    "failure_reasons": [
+      "The lesson did not meet the required rubric after the maximum retry limit."
+    ],
+    "evidence_summary": [
+      "A rubric-based review identified repeated weaknesses in clarity and structure."
+    ],
+    "improvement_suggestions": [
+      "Use simpler wording, define terminology, and present the RAG process step by step."
+    ],
+    "summary": "The lesson needs clearer explanations and a more structured teaching flow."
+  },
+  "lesson": "# Introduction to RAG\n\nThis lesson was not approved after the maximum retry limit."
+}
