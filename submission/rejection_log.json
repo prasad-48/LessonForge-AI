@@ -1,67 +1,135 @@
 {
   "topic": "Introduction to RAG",
-  "status": "rejected",
-  "attempt_count": 3,
-  "retry_count": 2,
-  "failure_reasons": [
-    "The lesson did not meet the required rubric after the maximum retry limit."
-  ],
-  "evaluation": {
-    "overall_pass": false,
-    "criteria": [
-      {
-        "name": "Accuracy and groundedness",
-        "passed": false,
-        "reason": "The lesson needs clearer factual grounding.",
-        "improvement_suggestion": "Add concise definitions and supported examples.",
-        "evidence": ""
-      },
-      {
-        "name": "Beginner-friendly language",
-        "passed": false,
-        "reason": "Some terminology could be simplified.",
-        "improvement_suggestion": "Replace jargon with plain-language explanations.",
-        "evidence": ""
-      },
-      {
-        "name": "Practical examples",
-        "passed": false,
-        "reason": "The examples were too brief.",
-        "improvement_suggestion": "Add a concrete RAG workflow example.",
-        "evidence": ""
-      },
-      {
-        "name": "No unexplained jargon",
-        "passed": false,
-        "reason": "The lesson introduced terms without context.",
-        "improvement_suggestion": "Define all key terms clearly in plain English.",
-        "evidence": ""
-      },
-      {
-        "name": "Coverage of key concepts",
-        "passed": false,
-        "reason": "The core stages of RAG were not fully covered.",
-        "improvement_suggestion": "Explain retrieval, generation, and their interaction.",
-        "evidence": ""
-      },
-      {
-        "name": "Logical teaching flow",
-        "passed": false,
-        "reason": "The lesson did not build the concept in a clear order.",
-        "improvement_suggestion": "Use a sequential structure from definition to workflow to benefits.",
-        "evidence": ""
-      }
-    ],
-    "failure_reasons": [
-      "The lesson did not meet the required rubric after the maximum retry limit."
-    ],
-    "evidence_summary": [
-      "A rubric-based review identified repeated weaknesses in clarity and structure."
-    ],
-    "improvement_suggestions": [
-      "Use simpler wording, define terminology, and present the RAG process step by step."
-    ],
-    "summary": "The lesson needs clearer explanations and a more structured teaching flow."
+  "verification": {
+    "mode": "mocked",
+    "note": "Uses mocked LLM responses. No live Groq API or external service calls were made."
   },
-  "lesson": "# Introduction to RAG\n\nThis lesson was not approved after the maximum retry limit."
+  "workflow": {
+    "status": "approved",
+    "attempt_count": 2,
+    "retry_count": 1,
+    "final_run_id": "mocked-verification"
+  },
+  "attempts": [
+    {
+      "attempt_number": 1,
+      "status": "rejected",
+      "lesson_text": "RAG stands for Random Access Generation. It uses only one memory layer.",
+      "failure_reasons": [
+        "Incorrect expansion of RAG. The correct meaning is Retrieval-Augmented Generation."
+      ],
+      "retry_feedback": "Correct the definition of RAG and provide a complete, beginner-friendly lesson covering the retrieval process, examples, embeddings, and vector search.",
+      "evaluation": {
+        "overall_pass": false,
+        "criteria": [
+          {
+            "name": "Accuracy and groundedness",
+            "passed": false,
+            "evidence": "The lesson incorrectly expands RAG as Random Access Generation.",
+            "reason": "The central definition is factually incorrect.",
+            "improvement_suggestion": "Use Retrieval-Augmented Generation."
+          },
+          {
+            "name": "Beginner-friendly language",
+            "passed": false,
+            "evidence": "The explanation does not clearly introduce the concept.",
+            "reason": "The learner is not given a useful explanation.",
+            "improvement_suggestion": "Use simple language and familiar comparisons."
+          },
+          {
+            "name": "Practical examples",
+            "passed": false,
+            "evidence": "No practical example is provided.",
+            "reason": "The learner cannot connect the concept to a real situation.",
+            "improvement_suggestion": "Add a document-question-answering example."
+          },
+          {
+            "name": "No unexplained jargon",
+            "passed": false,
+            "evidence": "The phrase memory layer is used without explanation.",
+            "reason": "Technical wording is not explained.",
+            "improvement_suggestion": "Explain technical terms in simple language."
+          },
+          {
+            "name": "Coverage of key concepts",
+            "passed": false,
+            "evidence": "Retrieval, context, embeddings, and vector search are missing.",
+            "reason": "Important parts of RAG are not covered.",
+            "improvement_suggestion": "Explain the main RAG workflow and its supporting concepts."
+          },
+          {
+            "name": "Logical teaching flow",
+            "passed": false,
+            "evidence": "The explanation jumps directly to an unsupported technical claim.",
+            "reason": "There is no structured progression from definition to application.",
+            "improvement_suggestion": "Organize the lesson from definition to workflow, example, and recap."
+          }
+        ],
+        "failure_reasons": [
+          "Incorrect definition of RAG."
+        ],
+        "summary": "Rejected because the definition is incorrect and the lesson lacks the required beginner-level coverage."
+      }
+    },
+    {
+      "attempt_number": 2,
+      "status": "approved",
+      "lesson_text": "# Introduction to RAG\n\n## 1. What is RAG?\n\nRAG stands for **Retrieval-Augmented Generation**.\n\nIt is a technique that helps an AI system find useful information before answering a question.\n\nThink of it like an open-book exam. Instead of answering only from memory, you can look at your textbook and use the information to give a better answer.\n\nRAG works in a similar way:\n- It searches for relevant information.\n- It gives that information to an AI language model.\n- The model uses it to generate an answer.\n\n## 2. Why is RAG useful?\n\nLarge Language Models (LLMs) learn from training data. However, they may not know new information or details from private documents.\n\nRAG helps by allowing an AI system to use information from external sources, such as PDFs, company documents, and knowledge bases.\n\nBenefits include:\n- Answers based on relevant documents.\n- Access to information that was not part of the model's training.\n- Less chance of making up information when retrieval and generation work correctly.\n- No need to retrain the entire language model whenever documents change.\n\nRAG does not guarantee correct answers. The quality of the retrieved information still matters.\n\n## 3. How does RAG work?\n\nA basic RAG system follows four steps:\n\n1. **User asks a question:** For example, \"What is the company's leave policy?\"\n2. **Retrieve information:** The system searches its document collection for relevant sections.\n3. **Provide context:** The retrieved information is given to the Large Language Model (LLM), along with the question.\n4. **Generate an answer:** The LLM uses the question and retrieved information to create a response.\n\nIn simple terms:\n\n**Question → Retrieve → Add context → Generate answer**\n\n## 4. Practical example\n\nImagine a college has a PDF containing its attendance policy.\n\nA student asks:\n\n\"What is the minimum attendance required for exams?\"\n\nWithout RAG, a general AI model might not know that college's specific rule.\n\nWith RAG:\n1. The system searches the college PDF.\n2. It finds the section about attendance.\n3. It provides that section to the LLM.\n4. The LLM explains the attendance requirement to the student.\n\nThe answer is based on the college document rather than a guess.\n\n## 5. What are embeddings?\n\nEmbeddings are lists of numbers that represent the meaning of text.\n\nFor example, the sentences:\n- \"How can I reset my password?\"\n- \"I forgot my login password.\"\n\nThey use different words but have similar meanings.\n\nAn embedding model converts text into numbers so that a computer can compare their meaning.\n\n## 6. What is vector search?\n\nVector search finds information by comparing embeddings.\n\nIt helps a RAG system find text that is similar in meaning to a user's question, even when the exact words are different.\n\nFor example, searching for \"reset password\" may retrieve a document containing \"forgot login password.\"\n\nA vector database can store these embeddings and help retrieve relevant information efficiently.\n\n## 7. RAG vs. a normal LLM answer\n\n| Normal LLM | LLM with RAG |\n|---|---|\n| Answers mainly using learned knowledge. | Uses learned knowledge and retrieved information. |\n| May not know private documents. | Can search connected private documents. |\n| May lack recent information. | Can use updated information available in its document collection. |\n| Can produce unsupported answers. | Retrieved context can help ground answers. |\n\nBoth approaches can make mistakes. RAG improves access to relevant information but does not guarantee accuracy.\n\n## 8. Quick recap\n\n- RAG means Retrieval-Augmented Generation.\n- It helps an AI system find information before generating an answer.\n- It retrieves relevant content and provides it to an LLM as context.\n- Embeddings represent the meaning of text as numbers.\n- Vector search finds text with similar meaning.\n- RAG is useful for answering questions about documents and other external information.\n\n**Remember:** RAG gives an AI model useful information to refer to before it answers a question.",
+      "failure_reasons": [],
+      "retry_feedback": "The corrected lesson addresses the first attempt's factual error and covers all six evaluation criteria.",
+      "evaluation": {
+        "overall_pass": true,
+        "criteria": [
+          {
+            "name": "Accuracy and groundedness",
+            "passed": true,
+            "evidence": "Defines RAG as Retrieval-Augmented Generation and explains that retrieved context can help ground answers without guaranteeing accuracy.",
+            "reason": "",
+            "improvement_suggestion": ""
+          },
+          {
+            "name": "Beginner-friendly language",
+            "passed": true,
+            "evidence": "Uses the open-book exam comparison and explains the process in simple steps.",
+            "reason": "",
+            "improvement_suggestion": ""
+          },
+          {
+            "name": "Practical examples",
+            "passed": true,
+            "evidence": "The college attendance PDF example demonstrates retrieval and answer generation.",
+            "reason": "",
+            "improvement_suggestion": ""
+          },
+          {
+            "name": "No unexplained jargon",
+            "passed": true,
+            "evidence": "Explains LLMs, embeddings, vector search, and vector databases in beginner-friendly terms.",
+            "reason": "",
+            "improvement_suggestion": ""
+          },
+          {
+            "name": "Coverage of key concepts",
+            "passed": true,
+            "evidence": "Covers definition, benefits, workflow, example, embeddings, vector search, comparison, and recap.",
+            "reason": "",
+            "improvement_suggestion": ""
+          },
+          {
+            "name": "Logical teaching flow",
+            "passed": true,
+            "evidence": "Moves from definition and benefits to workflow, example, supporting concepts, comparison, and recap.",
+            "reason": "",
+            "improvement_suggestion": ""
+          }
+        ],
+        "failure_reasons": [],
+        "evidence_summary": [
+          "All six criteria have specific supporting evidence in the corrected lesson."
+        ],
+        "improvement_suggestions": [],
+        "summary": "The corrected lesson passes all six criteria in this mocked verification."
+      }
+    }
+  ]
 }
